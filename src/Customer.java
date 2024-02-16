@@ -29,19 +29,23 @@ public class Customer {
     }
 
     // get()
-    public void setId(UUID id) {
-        this.id = id;
+
+    public UUID getId() {
+        return id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAddress(List<Address> address) {
-        this.address = address;
+    public List<Address> getAddress() {
+        return address;
     }
 }
+
+
+

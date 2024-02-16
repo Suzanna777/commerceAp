@@ -1,7 +1,13 @@
+import balance.Balance;
+import balance.CustomerBalance;
+import balance.GiftCardBalance;
 import category.Category;
 import category.Electronic;
 import category.Furniture;
 import category.SkinCare;
+import discount.AmountBasedDiscount;
+import discount.Discount;
+import discount.RateBasedDiscount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +16,8 @@ import java.util.UUID;
 public class DataGenerator {
     // List of < Address> + Customer with List of <Address> = ad to the DATA List of <Customer>
     // Data Base now has all customers with address, email, username
+
+    // Customer
     public static void createCustomer() {
         Address addressCustomer1 =
                 new Address("7660", "beverly blvd", "app 431", "90036", "CA");
@@ -45,6 +53,7 @@ public class DataGenerator {
         StaticConstants.CUSTOMER_LIST.add(customer4);
     }
 
+    // Category
     public static void createCategory() {
         // 1. Parent = new Child (all variable)
         Category category1 =
@@ -60,28 +69,57 @@ public class DataGenerator {
         StaticConstants.CATEGORY_LIST.add(category3);
     }
 
-
+    // Product
     public static void createProduct(){
         Product product1 =
                 new Product(UUID.randomUUID(), "PSP", 550.99, 200, 10, StaticConstants.CATEGORY_LIST.get(0).getId());
         Product product2 =
-                new Product(UUID.randomUUID(), "MacBook", 1200.00, 20, 5, StaticConstants.CATEGORY_LIST.get(1).getId());
+                new Product(UUID.randomUUID(), "MacBook", 1200.00, 20, 5, StaticConstants.CATEGORY_LIST.get(0).getId());
 
         Product product3 =
-                new Product(UUID.randomUUID(), "Iphone 14", 1100.00, 30, 10, StaticConstants.CATEGORY_LIST.get(2).getId());
+                new Product(UUID.randomUUID(), "Iphone 14", 1100.00, 30, 10, StaticConstants.CATEGORY_LIST.get(0).getId());
 
+        Product product4 =
+                new Product(UUID.randomUUID(), "Chanel cream", 100.00, 15, 10, StaticConstants.CATEGORY_LIST.get(1).getId());
+
+        Product product5 =
+                new Product(UUID.randomUUID(), "Ikea sofa", 700.00, 5, 10, StaticConstants.CATEGORY_LIST.get(2).getId());
         // Data class methodName() .add(thisNewProductName)
         StaticConstants.PRODUCT_LIST.add(product1);
         StaticConstants.PRODUCT_LIST.add(product2);
         StaticConstants.PRODUCT_LIST.add(product3);
+        StaticConstants.PRODUCT_LIST.add(product4);
+        StaticConstants.PRODUCT_LIST.add(product5);
+
+    }
+
+    // Balance
+    public static void createBalance(){
+        Balance customerBalance = new CustomerBalance(StaticConstants.CUSTOMER_LIST.get(0).getId(), 500.00);
+        Balance giftCardBalance = new GiftCardBalance(StaticConstants.CUSTOMER_LIST.get(1).getId(), 200.00);
 
 
+        StaticConstants.CUSTOMER_BALANCE_LIST.add(customerBalance);
+        StaticConstants.GIFT_CARD_BALANCE_LIST.add(giftCardBalance);
+
+    }
 
 
+    // Discount
+    public static void createDiscount(){
+        Discount amountBasedDiscount = new AmountBasedDiscount(UUID.randomUUID(), "Buy $250 Free $50", 250.00, 50.00);
+        Discount rateBasedDiscount = new RateBasedDiscount(UUID.randomUUID(), "Buy $500 Free 15%", 500.00, 15.00);
 
+        StaticConstants.DISCOUNT_LIST.add(amountBasedDiscount);
+        StaticConstants.DISCOUNT_LIST.add(rateBasedDiscount);
 
 
     }
+
+
+
+
+
 
 }
 /* Data generate and create for all new costumer

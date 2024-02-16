@@ -11,6 +11,10 @@ public abstract class Balance {
         this.balance = balance;
     }
 
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
     public UUID getCustomerId() {
         return customerId;
     }
