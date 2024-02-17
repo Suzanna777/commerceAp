@@ -118,7 +118,7 @@ public class Main {
                         try {
                             Product eachProduct = findProductById(productId);
                             // if the product is NOT available in stock?
-                            if (!productInCartAvailableInStock(cart, eachProduct)) {
+                            if (!putItemToCartIfStockAvailable(cart, eachProduct)) {
                                 System.out.println("Stock is insufficient. Please try again");
                                 continue;
                             }
@@ -191,7 +191,7 @@ public class Main {
 
     }
 
-    public static boolean productInCartAvailableInStock(Cart cart, Product product) {
+    public static boolean putItemToCartIfStockAvailable(Cart cart, Product product) {
         System.out.println("Please provide product count: ");
         Scanner scanner = new Scanner(System.in);
         int count = scanner.nextInt();
