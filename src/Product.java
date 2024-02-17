@@ -1,5 +1,6 @@
 import category.Category;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Product {
@@ -54,5 +55,14 @@ public class Product {
         throw new Exception("Category not found " + getName());
     }
 
+    public LocalDateTime getDeliveryDueDate() throws Exception {
+        for (Category eachCategory : StaticConstants.CATEGORY_LIST){
+           // if reading category id is Equals to each reading category id
+            if(getCategoryId().toString().equals(eachCategory.getId().toString())){
+                return eachCategory.findDeliveryDueDate();
+            }
+        }
+        throw new Exception("Category could not find");
+    }
 
 }
