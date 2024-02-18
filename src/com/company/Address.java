@@ -1,17 +1,19 @@
+package com.company;
+
 public class Address {
   // 1. encapsulating
     private String streetNumber;
    private String streetName;
    private String additionalAddressLine;
-   private String zeepCode;
+   private String zipCode;
    private String state;
 
    // 2. con - to set() the instance variable to the objects
-    public Address(String streetNumber, String streetName, String additionalAddressLine, String zeepCode, String state) {
+    public Address(String streetNumber, String streetName, String additionalAddressLine, String zipCode, String state) {
         this.streetNumber = streetNumber;
         this.streetName = streetName;
         this.additionalAddressLine = additionalAddressLine;
-        this.zeepCode = zeepCode;
+        this.zipCode = zipCode;
         this.state = state;
     }
 
@@ -28,8 +30,8 @@ public class Address {
         return additionalAddressLine;
     }
 
-    public String getZeepCode() {
-        return zeepCode;
+    public String getZipCode() {
+        return zipCode;
     }
 
     public String getState() {

@@ -1,3 +1,6 @@
+package com.company;
+
+import com.company.Address;
 
 import java.util.List;
 import java.util.UUID;

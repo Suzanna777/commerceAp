@@ -1,10 +1,12 @@
+package com.company;
+
 import java.util.Map;
 import java.util.UUID;
 
 public class Cart {
     private Customer customer;
     private UUID discountId;
-   // Product - milk, 10
+   // com.company.Product - milk, 10
     private Map<Product, Integer> productMap;
 
     public Cart(Customer customer) {
@@ -20,7 +22,7 @@ public class Cart {
 
     public Double calculateCartTotalAmount(){
         double totalAmount = 0;
-       // for each product from the ProductBox where a key and value in the Set - key Product milk, value int 10$
+       // for each product from the ProductBox where a key and value in the Set - key com.company.Product milk, value int 10$
         for (Product eachProduct : productMap.keySet()){
             // each product finds the price $ * ( int quententy )
             totalAmount += eachProduct.getPrice() * productMap.get(eachProduct);

@@ -1,4 +1,6 @@
-import category.Category;
+package com.company;
+
+import com.company.category.Category;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -40,6 +42,10 @@ public class Product {
         return remainingStock;
     }
 
+    public void setRemainingStock(Integer remainingStock) {
+        this.remainingStock = remainingStock;
+    }
+
     public UUID getCategoryId() {
         return categoryId;
     }
@@ -57,7 +63,7 @@ public class Product {
 
     public LocalDateTime getDeliveryDueDate() throws Exception {
         for (Category eachCategory : StaticConstants.CATEGORY_LIST){
-           // if reading category id is Equals to each reading category id
+           // if reading com.company.category id is Equals to each reading com.company.category id
             if(getCategoryId().toString().equals(eachCategory.getId().toString())){
                 return eachCategory.findDeliveryDueDate();
             }

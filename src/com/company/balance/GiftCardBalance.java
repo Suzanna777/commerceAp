@@ -1,4 +1,4 @@
-package balance;
+package com.company.balance;
 
 import java.util.UUID;
 
@@ -11,7 +11,7 @@ public class GiftCardBalance extends Balance{
     public Double addBalance(Double additionalBalance) {
        double promotionalBalanceAmount = additionalBalance * 10 / 100;
         setBalance(getBalance() + additionalBalance + promotionalBalanceAmount);
-       return getBalance(); // read the balance
+       return getBalance(); // read the com.company.checkout.balance
     }
 
 

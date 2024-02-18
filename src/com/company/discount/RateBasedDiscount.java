@@ -1,4 +1,4 @@
-package discount;
+package com.company.discount;
 
 import java.util.UUID;
 
@@ -16,6 +16,6 @@ public class RateBasedDiscount extends Discount{
 
     @Override
     public Double calculateCartAfterDiscountApplied(Double amount) {
-        return null;
+        return amount - (amount * rateAmount / 100);
     }
 }

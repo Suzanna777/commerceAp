@@ -1,23 +1,27 @@
-import balance.Balance;
-import balance.CustomerBalance;
-import balance.GiftCardBalance;
-import category.Category;
-import category.Electronic;
-import category.Furniture;
-import category.SkinCare;
-import discount.AmountBasedDiscount;
-import discount.Discount;
-import discount.RateBasedDiscount;
+package com.company;
+
+import com.company.Address;
+import com.company.Customer;
+import com.company.balance.Balance;
+import com.company.balance.CustomerBalance;
+import com.company.balance.GiftCardBalance;
+import com.company.category.Category;
+import com.company.category.Electronic;
+import com.company.category.Furniture;
+import com.company.category.SkinCare;
+import com.company.discount.AmountBasedDiscount;
+import com.company.discount.Discount;
+import com.company.discount.RateBasedDiscount;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class DataGenerator {
-    // List of < Address> + Customer with List of <Address> = ad to the DATA List of <Customer>
+    // List of < com.company.Address> + com.company.Customer with List of <com.company.Address> = ad to the DATA List of <com.company.Customer>
     // Data Base now has all customers with address, email, username
 
-    // Customer
+    // com.company.Customer
     public static void createCustomer() {
         Address addressCustomer1 =
                 new Address("7660", "beverly blvd", "app 431", "90036", "CA");
@@ -29,14 +33,14 @@ public class DataGenerator {
                 new Address("82", "Lenina", "4", "0008", "KZ");
 
 
-        // add to the Data classList of <Address> OLE .ADD to the Customer1 2, and 3
+        // add to the Data classList of <com.company.Address> OLE .ADD to the Customer1 2, and 3
         List<Address> customer1AddressList = new ArrayList<>();
         customer1AddressList.add(addressCustomer1);
         customer1AddressList.add(addressCustomer2);
         customer1AddressList.add(addressCustomer3);
         customer1AddressList.add(addressCustomer4);
 
-        // calling customer with List of <Address>
+        // calling customer with List of <com.company.Address>
         Customer customer1 =
                 new Customer(UUID.randomUUID(), "amina", "magic@gmail.com", customer1AddressList);
         Customer customer2 =
@@ -46,7 +50,7 @@ public class DataGenerator {
         Customer customer4 =
                 new Customer(UUID.randomUUID(), "suzanna", "suzanna@gmail.com", customer1AddressList);
 
-        // class name .method name .add(customer 1 with List of <Address>)
+        // class name .method name .add(customer 1 with List of <com.company.Address>)
         StaticConstants.CUSTOMER_LIST.add(customer1);
         StaticConstants.CUSTOMER_LIST.add(customer2);
         StaticConstants.CUSTOMER_LIST.add(customer3);
@@ -69,7 +73,7 @@ public class DataGenerator {
         StaticConstants.CATEGORY_LIST.add(category3);
     }
 
-    // Product
+    // com.company.Product
     public static void createProduct(){
         Product product1 =
                 new Product(UUID.randomUUID(), "PSP", 550.99, 200, 10, StaticConstants.CATEGORY_LIST.get(0).getId());
@@ -124,11 +128,11 @@ public class DataGenerator {
 }
 /* Data generate and create for all new costumer
    1. static method() - can be call trow the class name .methodName()
-   2. Calling class Address and providing parameters
-   3. Calling class Customer and providing parameters
-      3.1 Customer class has parameter of Collection Interface List of Type <Address>
-      3.2 Calling the Collection interface List of <Address>
-      3.3 Ad every address to the List of the <Address>
+   2. Calling class com.company.Address and providing parameters
+   3. Calling class com.company.Customer and providing parameters
+      3.1 com.company.Customer class has parameter of Collection Interface List of Type <com.company.Address>
+      3.2 Calling the Collection interface List of <com.company.Address>
+      3.3 Ad every address to the List of the <com.company.Address>
 
 
 * */
